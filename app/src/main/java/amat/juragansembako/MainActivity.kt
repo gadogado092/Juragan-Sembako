@@ -5,6 +5,7 @@ import amat.juragansembako.ui.home.CashierScreen
 import amat.juragansembako.ui.home.OtherScreen
 import amat.juragansembako.ui.home.TransactionScreen
 import amat.juragansembako.ui.theme.JuraganSembakoTheme
+import amat.juragansembako.ui.theme.White
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -52,7 +53,7 @@ fun MyBottomNavigation(navController: NavController) {
         BottomNavItem.Transaction,
         BottomNavItem.Other
     )
-    BottomNavigation {
+    BottomNavigation(backgroundColor = White) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
         items.forEach { item ->
@@ -61,7 +62,7 @@ fun MyBottomNavigation(navController: NavController) {
                 label = {
                     Text(
                         text = item.title,
-                        fontSize = 9.sp
+                        fontSize = 10.sp
                     )
                 },
                 selectedContentColor = Color.Black,
